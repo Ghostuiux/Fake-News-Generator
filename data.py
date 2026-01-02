@@ -31,3 +31,18 @@ places_things = np.array([
     "inside a haunted mansion", "during the championship match",
     "in a hidden cave", "on a spaceship"
 ])
+
+def detectcat(subject):
+    catkw = {
+    "Politics": ["President", "Politician", "Minister", "Government", "Leader", "Activist", "Union"],
+    "Entertainment": ["Celebrity", "Actor", "Singer", "YouTube", "Influencer", "Chef", "Famous"],
+    "Technology": ["Tech", "AI", "Robot", "Startup", "Scientist", "NASA", "Engineer"],
+    "Sports": ["Football", "Athlete", "Stadium", "Superstar", "Champion", "Competition"],
+    "Miscellaneous": ["Doctor", "Environmentalist", "Journalist", "Alien", "Billionaire", "Teacher", "Hacker"]
+    }
+    
+    for category, keywords in catkw.items():
+        for kw in keywords:
+            if kw.lower() in subject.lower():
+                return category
+    return "Miscellaneous"
