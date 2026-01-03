@@ -1,4 +1,5 @@
 import data
+import category
 import random
 
 print("Dear User! Welcome to Fake News Generator.")
@@ -8,8 +9,8 @@ inputcat = input("\nWhich category news you want? (Technology/Sports/Politics/En
 filtered_subjects = []
 
 for subject in data.subjects:
-    category = data.detectcategory(subject)
-    if category.lower() == inputcat.lower(): ##lower here represent if we write key word in small or capital letter it can easily compare that except case sensitivity.
+    cat = category.detectcategory(subject)
+    if cat.lower() == inputcat.lower(): ##lower here represent if we write key word in small or capital letter it can easily compare that except case sensitivity.
         filtered_subjects.append(subject)
         
 if not filtered_subjects:
