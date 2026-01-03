@@ -8,8 +8,8 @@ inputcat = input("\nWhich category news you want? (Technology/Sports/Politics/En
 filtered_subjects = []
 
 for subject in data.subjects:
-    cat = data.detectcat(subject)
-    if cat.lower() == inputcat.lower():
+    category = data.detectcategory(subject)
+    if category.lower() == inputcat.lower(): ##lower here represent if we write key word in small or capital letter it can easily compare that except case sensitivity.
         filtered_subjects.append(subject)
         
 if not filtered_subjects:
@@ -18,7 +18,7 @@ if not filtered_subjects:
     exit()
 
 while True:
-    subject = random.choice(data.subjects)
+    subject = random.choice(filtered_subjects)
     action = random.choice(data.actions)
     places_thing = random.choice(data.places_things)
     

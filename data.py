@@ -32,8 +32,8 @@ places_things = np.array([
     "in a hidden cave", "on a spaceship"
 ])
 
-def detectcat(subject):
-    catkw = {
+def detectcategory(subject):
+    categorykeywords = {
     "Politics": ["President", "Politician", "Minister", "Government", "Leader", "Activist", "Union"],
     "Entertainment": ["Celebrity", "Actor", "Singer", "YouTube", "Influencer", "Chef", "Famous"],
     "Technology": ["Tech", "AI", "Robot", "Startup", "Scientist", "NASA", "Engineer"],
@@ -41,8 +41,8 @@ def detectcat(subject):
     "Miscellaneous": ["Doctor", "Environmentalist", "Journalist", "Alien", "Billionaire", "Teacher", "Hacker"]
     }
     
-    for category, keywords in catkw.items():
-        for kw in keywords:
-            if kw.lower() in subject.lower():
+    for category, keywords in categorykeywords.items():
+        for keyword in keywords:
+            if keyword.lower() in subject.lower(): #lower here represent if we write key word in small or capital letter it can easily compare that except case sensitivity.
                 return category
     return "Miscellaneous"
